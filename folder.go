@@ -65,12 +65,12 @@ func (s *FolderService) GetFolderApiID(params *GetFolderTree) (*Folder, *Respons
 
 // GetFolderTree contains parameters that will be passed to GetFolderTree API.
 type GetFolderTree struct {
-	Permalink   string            `url:"permalink,omitempty"`
-	Descendants *bool              `url:"descendants,omitempty"`
-	Metadata    *Metadata          `url:"metadata,omitempty"`
+	Permalink   string    `url:"permalink,omitempty"`
+	Descendants *bool     `url:"descendants,omitempty"`
+	Metadata    *Metadata `url:"metadata,omitempty"`
 	//CustomField *CustomFieldFilter `url:"customField,omitempty"`
 	//UpdatedDate *DateRange         `url:"updatedDate,omitempty"`
-	Project     *bool              `url:"project,omitempty"`
-	Deleted     *bool              `url:"deleted,omitempty"`
+	Project *bool `url:"project,omitempty"`
+	Deleted *bool `url:"deleted,omitempty"`
 	//Fields      *FieldSet          `url:"fields,omitempty"`
 }

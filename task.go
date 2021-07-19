@@ -31,7 +31,7 @@ type Dates struct {
 
 // TasksResponse is Response from /tasks query
 type TaskResponse struct {
-	Kind string `json:"kind"`
+	Kind string         `json:"kind"`
 	Data []DetailedTask `json:"data,omitempty"`
 }
 
@@ -50,7 +50,7 @@ type DetailedTask struct {
 	Importance       string        `json:"importance"`
 	CreatedDate      Time          `json:"createdDate"`
 	UpdatedDate      Time          `json:"updatedDate"`
-	CompletedDate	 Time		   `json:"completedDate"`
+	CompletedDate    Time          `json:"completedDate"`
 	Dates            Dates         `json:"dates"`
 	Scope            string        `json:"scope"`
 	AuthorIds        []string      `json:"authorIds"`
@@ -60,13 +60,13 @@ type DetailedTask struct {
 	Priority         string        `json:"priority"`
 	FollowedByMe     bool          `json:"followedByMe"`
 	FollowerIDs      []string      `json:"followerIds"`
-	Recurrent		 bool		   `json:"recurrent"`
+	Recurrent        bool          `json:"recurrent"`
 	SuperTaskIDs     []string      `json:"superTaskIds"`
 	SubTaskIDs       []string      `json:"subTaskIds"`
 	DependencyIDs    []string      `json:"dependencyIds"`
 	Metadata         []Metadata    `json:"metadata"`
 	CustomFields     []CustomField `json:"customFields"`
-	BillingType		 string		   `json:"billingType"`
+	BillingType      string        `json:"billingType"`
 }
 
 //UpdateTask update task by id
@@ -105,30 +105,30 @@ func (t *TaskService) CreateTask(folderApiID string, params *CreateTask) (*TaskR
 
 // CreateTask contains parameters that will be passed to GetFolderTree API.
 type CreateTask struct {
-	Title   	string            `url:"title,omitempty"`
-	Description string             `url:"description,omitempty"`
-	Metadata    *Metadata          `url:"metadata,omitempty"`
-	Project     *bool              `url:"project,omitempty"`
-	Deleted     *bool              `url:"deleted,omitempty"`
+	Title       string    `url:"title,omitempty"`
+	Description string    `url:"description,omitempty"`
+	Metadata    *Metadata `url:"metadata,omitempty"`
+	Project     *bool     `url:"project,omitempty"`
+	Deleted     *bool     `url:"deleted,omitempty"`
 }
 
 // UpdateTask contains parameters that will be passed to GetFolderTree API.
 type UpdateTask struct {
-	Title              *string              `url:"title,omitempty"`
-	Description        *string              `url:"description,omitempty"`
+	Title              *string        `url:"title,omitempty"`
+	Description        *string        `url:"description,omitempty"`
 	Importance         TaskImportance `url:"importance,omitempty"`
-	AddParents         FolderIDSet          `url:"addParents,omitempty"`
-	RemoveParents      FolderIDSet          `url:"removeParents,omitempty"`
-	AddShareds         ContactIDSet         `url:"addShareds,omitempty"`
-	RemoveShareds      ContactIDSet         `url:"removeShareds,omitempty"`
-	AddResponsibles    string         		`url:"addResponsibles,omitempty"`
-	RemoveResponsibles ContactIDSet         `url:"removeResponsibles,omitempty"`
-	AddFollowers       ContactIDSet         `url:"addFollowers,omitempty"`
-	Follow             *bool                `url:"follow,omitempty"`
-	PriorityBefore     TaskID         		`url:"priorityBefore,omitempty"`
-	PriorityAfter      TaskID         		`url:"priorityAfter,omitempty"`
-	CustomStatus       CustomStatusID 		`url:"customStatus,omitempty"`
-	Restore            *bool                `url:"restore,omitempty"`
+	AddParents         FolderIDSet    `url:"addParents,omitempty"`
+	RemoveParents      FolderIDSet    `url:"removeParents,omitempty"`
+	AddShareds         ContactIDSet   `url:"addShareds,omitempty"`
+	RemoveShareds      ContactIDSet   `url:"removeShareds,omitempty"`
+	AddResponsibles    string         `url:"addResponsibles,omitempty"`
+	RemoveResponsibles ContactIDSet   `url:"removeResponsibles,omitempty"`
+	AddFollowers       ContactIDSet   `url:"addFollowers,omitempty"`
+	Follow             *bool          `url:"follow,omitempty"`
+	PriorityBefore     TaskID         `url:"priorityBefore,omitempty"`
+	PriorityAfter      TaskID         `url:"priorityAfter,omitempty"`
+	CustomStatus       CustomStatusID `url:"customStatus,omitempty"`
+	Restore            *bool          `url:"restore,omitempty"`
 }
 
 // ContactID is a string that represents a Wrike Contact ID

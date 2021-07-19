@@ -9,7 +9,7 @@ import (
 	"net/url"
 	"strings"
 	"time"
-	)
+)
 
 const (
 	defaultBaseURL = "https://www.wrike.com/"
@@ -17,7 +17,7 @@ const (
 	userAgent      = "Golang Wrike API client"
 	foldersUrl     = "/folders"
 	contactsUrl    = "/contacts"
-	tasksUrl 	   = "/tasks"
+	tasksUrl       = "/tasks"
 )
 
 type Client struct {
